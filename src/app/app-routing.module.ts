@@ -4,7 +4,8 @@ import { MainComponent } from './module/main/containers/main/main.component';
 
 
 const routes: Routes = [
-  { path: '', component: MainComponent }
+  { path: '', component: MainComponent },
+  { path: '**', component: MainComponent }
 ];
 
 @NgModule({
