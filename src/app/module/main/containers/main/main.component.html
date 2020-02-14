@@ -1,1 +1,18 @@
-<p>main works!</p>
+<div class="box__search">
+  <div class="input-search">
+    <input #input type="text" name="q" (keydown)="searchBar($event)" autocomplete="off" placeholder="Search">
+    <button>Search</button>
+  </div>
+  <ul class="ul-search__find">
+    <li *ngFor="let item of itemOrder; let i = index"
+        #liSelect
+        [id]="i"
+        tabindex="0"
+        (keydown.arrowDown)="changeKeyDown(item, i)"
+        (keydown.arrowUp)="changeKeyUp(item, i)"
+        (click)="onClick(item)">
+      {{ item }}
+    </li>
+  </ul>
+</div>
+

@@ -1,0 +1,30 @@
+.box__search {
+  display: flex;
+  flex-direction: column;
+  //position: relative;
+  position: absolute;
+  li {
+    cursor: pointer;
+    padding: 5px;
+    &:hover {
+      outline:solid 1px green;
+    }
+
+    &:focus {
+      outline:solid 1px green;
+    }
+
+    &:active {
+      outline:solid 1px green;
+    }
+  }
+}
+
+.ul-search__find {
+  border: solid 1px black;
+  margin: 0;
+  list-style-type: none;
+  padding: 0;
+  //position: absolute;
+  width: 100%;
+}
