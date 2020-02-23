@@ -1,8 +1,13 @@
 <div class="box__search">
   <div class="input-search">
-    <input #input type="text" name="q" (keydown)="searchBar($event)" autocomplete="off" placeholder="Search">
+<!--    <input #input type="text" name="q" (keydown)="searchBar($event)" autocomplete="off" placeholder="Search">-->
+    <app-input-search [placeholder]="'Search'"
+                      [autocomplete]="'on'"
+                      [(ngModel)]="modelChild">
+    </app-input-search>
     <button>Search</button>
   </div>
+
   <ul class="ul-search__find">
     <li *ngFor="let item of itemOrder; let i = index"
         #liSelect
@@ -14,5 +19,6 @@
       {{ item }}
     </li>
   </ul>
+  <pre>{{ modelChild }}</pre>
 </div>
 
