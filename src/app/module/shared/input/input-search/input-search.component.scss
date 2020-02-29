@@ -1,0 +1,15 @@
+.input-search__component {
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  //width: 100%;
+  box-sizing: border-box;
+  font-family: montserrat;
+  color: #2C3E50;
+  font-size: 13px;
+
+  &:focus {
+    border: solid 0.8px #f0bd50;;
+    outline: none;
+  }
+}

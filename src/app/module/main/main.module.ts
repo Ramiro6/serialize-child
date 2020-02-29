@@ -4,13 +4,18 @@ import { MainComponent } from './containers/main/main.component';
 import { GetDataService } from './services/get-data/get-data.service';
 import { SharedModule } from '../shared/shared.module';
 import {FormsModule} from '@angular/forms';
+import { SearchListComponent } from './components/search-list/search-list.component';
+import { SetClickDirective } from './directive/set-click.directive';
 
 @NgModule({
   declarations: [
-    MainComponent
+    MainComponent,
+    SearchListComponent,
+    SetClickDirective
   ],
   exports: [
-    MainComponent
+    MainComponent,
+    SearchListComponent
   ],
     imports: [
       CommonModule,

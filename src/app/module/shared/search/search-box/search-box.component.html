@@ -1,0 +1,12 @@
+<div class="input-search">
+  <app-input-search [placeholder]="'Search'"
+                    [autocomplete]="'on'"
+                    (keyup.enter)="onEnter($event)"
+                    (keydown)="onDownOrUp($event)"
+                    (ngModelChange)="toReturnValue($event)"
+                    [(ngModel)]="modelChild">
+  </app-input-search>
+  <img class="svg__size" [src]="['assets/icons/search_icon.svg']">
+<!--  <button>{{ nameOfSearch }}</button>-->
+</div>
+

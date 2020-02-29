@@ -54,5 +54,4 @@ export class InputSearchComponent implements ControlValueAccessor, OnInit {
     this.onChange(this.value);
     this.onTouch();
   }
-
 }

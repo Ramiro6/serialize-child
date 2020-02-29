@@ -1,0 +1,19 @@
+.input-search {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #ccc;
+  background-color: white;
+  &:focus {
+    border: solid 0.8px #f0bd50 !important;
+    //outline: none;
+  }
+}
+
+
+::ng-deep .input-search__component {
+  border: none !important;
+}
+
+.svg__size {
+  height: 30px;
+}
