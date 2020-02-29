@@ -11,11 +11,13 @@ export class SetClickDirective {
 
   @HostListener('document:click', ['$event'])
   onClick({ path }) {
-    const getElement: HTMLUListElement = this.element.nativeElement;
-    if (path.includes(getElement) || path.includes(this.takeBox.nativeElement) ) {
-      return;
-    } else {
-      this.sendData(false);
+    if (this.takeBox?.nativeElement) {
+      const getElement: HTMLUListElement = this.element.nativeElement;
+      if (path.includes(getElement) || path.includes(this.takeBox.nativeElement) ) {
+        return;
+      } else {
+        this.sendData(false);
+      }
     }
   }
 

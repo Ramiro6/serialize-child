@@ -1,5 +1,10 @@
 <ng-content input-search></ng-content>
-<ul class="ul-search__find" appSetClick [takeBox]="cmpSearchBox" (matchClick)="hiddenUl($event)" #ulList *ngIf="showList">
+<ul class="ul-search__find"
+    appSetClick
+    [takeBox]="cmpSearchBox"
+    (matchClick)="hiddenUl($event)"
+    #ulList
+    *ngIf="showList">
   <li *ngFor="let item of items; let i = index"
       #liSelect
       [id]="'search-list__' + i"
