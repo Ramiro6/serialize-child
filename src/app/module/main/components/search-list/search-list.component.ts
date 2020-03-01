@@ -12,16 +12,7 @@ import {
   ViewChildren
 } from '@angular/core';
 import {SearchBoxComponent} from '../../../shared/search/search-box/search-box.component';
-import {fromEvent, Subscription} from 'rxjs';
-import {
-  debounceTime,
-  distinct,
-  distinctUntilChanged,
-  distinctUntilKeyChanged,
-  exhaust, ignoreElements, last,
-  pluck,
-  take, takeLast
-} from 'rxjs/operators';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-search-list',
@@ -35,6 +26,7 @@ export class SearchListComponent implements AfterContentInit, OnDestroy {
   @ViewChild('ulList', { read: ElementRef, static: false }) ulList: ElementRef;
   @Input() items: any;
   showList = false;
+  quantity: string | number;
   contentSubscription$: Subscription;
 
   constructor( private element: ElementRef,
@@ -51,14 +43,13 @@ export class SearchListComponent implements AfterContentInit, OnDestroy {
       .subscribe((item: string) => {
         item.length >= 3 ? this.showList = true : this.showList = false;
         this.cdr.detectChanges();
-        if (this.ulList && this.ulList.nativeElement) {
+        if (this.ulList?.nativeElement) {
           console.log('Ul list', this.ulList.nativeElement);
           const cmpBox: HTMLElement = (this.cmpSearchBox as ElementRef).nativeElement;
           const firstChildBox = (cmpBox.firstElementChild as HTMLInputElement);
           const getWithElement = firstChildBox.offsetWidth;
-          this.render.setStyle(this.ulList.nativeElement, 'width', `${getWithElement}px`);
+          this.quantity = getWithElement;
         }
-
       });
     this.contentSubscription$ = this.searchBox.keyMove.subscribe((item: string) => {
       switch (item) {
@@ -106,13 +97,13 @@ export class SearchListComponent implements AfterContentInit, OnDestroy {
     this.searchBox.__setValue($event);
   }
 
+  hiddenUl($event: boolean) {
+    this.showList = $event;
+  }
+
   ngOnDestroy(): void {
     if (this.contentSubscription$) {
       this.contentSubscription$.unsubscribe();
     }
-  }
-
-  hiddenUl($event: boolean) {
-    this.showList = $event;
   }
 }

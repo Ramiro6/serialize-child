@@ -1,17 +1,20 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { InputSearchComponent } from './input/input-search/input-search.component';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {InputSearchComponent} from './input/input-search/input-search.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { SearchBoxComponent } from './search/search-box/search-box.component';
+import {SearchBoxComponent} from './search/search-box/search-box.component';
+import {SetStyleDirective} from './directives/set-width/set-style.directive';
 
 @NgModule({
   declarations: [
     InputSearchComponent,
-    SearchBoxComponent
+    SearchBoxComponent,
+    SetStyleDirective
   ],
   exports: [
     InputSearchComponent,
-    SearchBoxComponent
+    SearchBoxComponent,
+    SetStyleDirective
   ],
   imports: [
     CommonModule,

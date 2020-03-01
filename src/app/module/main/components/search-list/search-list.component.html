@@ -1,5 +1,8 @@
 <ng-content input-search></ng-content>
 <ul class="ul-search__find"
+    appSetWidth
+    [typeStyle]="'width'"
+    [quantity]="quantity"
     appSetClick
     [takeBox]="cmpSearchBox"
     (matchClick)="hiddenUl($event)"
