@@ -1,13 +1,16 @@
 <ng-content input-search></ng-content>
-<ul class="ul-search__find"
+<ul class="ul-search__find animation"
+    [@openClose]
+    (@openClose.start)="onAnimationEvent($event)"
+    (@openClose.done)="onAnimationEvent($event)"
     appSetWidth
     [typeStyle]="'width'"
     [quantity]="quantity"
     appSetClick
     [takeBox]="cmpSearchBox"
     (matchClick)="hiddenUl($event)"
-    #ulList
-    *ngIf="showList">
+    *ngIf="showList"
+    #ulList>
   <li *ngFor="let item of items; let i = index"
       #liSelect
       [id]="'search-list__' + i"

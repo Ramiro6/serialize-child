@@ -1,17 +1,26 @@
-<nav class="nav-main__box">
-  <button>Click me!</button>
-  <div class="box__search">
-    <app-search-list [items]="itemOrder">
-      <app-search-box input-search [nameOfSearch]="'Search'" (returnValue)="elementReturn($event)"></app-search-box>
-    </app-search-list>
-  </div>
-</nav>
+<div class="container">
+  <nav class="nav-main__box item-header">
+    <!--  <button>Click me!</button>-->
+    <div class="box__search">
+      <app-search-list [items]="itemOrder">
+        <app-search-box input-search [nameOfSearch]="'Search'" (returnValue)="elementReturn($event)"></app-search-box>
+      </app-search-list>
+    </div>
+  </nav>
 
 
-<h1 text-center>
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa cumque dignissimos eos est, expedita explicabo in
-  ipsum molestias nulla veniam. Amet assumenda consequuntur et minima quaerat quia sed temporibus vero.
-</h1>
+  <aside class="side-bar__box">
+    <h4>hola</h4>
+    <h4>hola</h4>
+    <h4>hola</h4>
+    <h4>hola</h4>
+  </aside>
 
+
+  <h1 text-center class="main-content">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa cumque dignissimos eos est, expedita explicabo in
+    ipsum molestias nulla veniam. Amet assumenda consequuntur et minima quaerat quia sed temporibus vero.
+  </h1>
+</div>
 
 

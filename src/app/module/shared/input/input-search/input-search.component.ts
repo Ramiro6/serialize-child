@@ -13,7 +13,7 @@ type TypeAutoComplete = 'on' | 'off';
   providers: [CUSTOM_CONTROL_ACCESSOR],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class InputSearchComponent implements ControlValueAccessor, OnInit {
+export class InputSearchComponent implements ControlValueAccessor {
   // tslint:disable-next-line:variable-name
   private _autocomplete: TypeAutoComplete = 'off';
   @Input() type = 'text';
@@ -28,8 +28,6 @@ export class InputSearchComponent implements ControlValueAccessor, OnInit {
   public value = '';
 
   constructor( private cdr: ChangeDetectorRef ) { }
-
-  ngOnInit(): void {}
 
   // forms
   registerOnChange(fn: any): void {

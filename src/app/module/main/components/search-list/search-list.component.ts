@@ -13,11 +13,28 @@ import {
 } from '@angular/core';
 import {SearchBoxComponent} from '../../../shared/search/search-box/search-box.component';
 import {Subscription} from 'rxjs';
+import {animate, keyframes, style, transition, trigger} from '@angular/animations';
 
 @Component({
   selector: 'app-search-list',
   templateUrl: './search-list.component.html',
-  styleUrls: ['./search-list.component.scss']
+  styleUrls: ['./search-list.component.scss'],
+  animations: [
+    trigger('openClose', [
+      transition(':enter', [
+        animate(300, keyframes([
+          style({ opacity: 0 }),
+          style({ opacity: 1 })
+        ])),
+      ]),
+      transition(':leave', [
+        animate(300, keyframes([
+          style({ opacity: 1 }),
+          style({ opacity: 0 })
+        ])),
+      ])
+    ])
+  ]
 })
 export class SearchListComponent implements AfterContentInit, OnDestroy {
   @ContentChild(SearchBoxComponent) searchBox: SearchBoxComponent;
@@ -36,6 +53,7 @@ export class SearchListComponent implements AfterContentInit, OnDestroy {
   onClick(value): void {
     this.searchBox.__setValue(value);
   }
+
 
   ngAfterContentInit(): void {
 
@@ -105,5 +123,9 @@ export class SearchListComponent implements AfterContentInit, OnDestroy {
     if (this.contentSubscription$) {
       this.contentSubscription$.unsubscribe();
     }
+  }
+
+  onAnimationEvent($event: any) {
+    console.log($event);
   }
 }

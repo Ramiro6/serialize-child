@@ -4,17 +4,41 @@
   width: 100%;
   padding: 6px;
   border: 1px solid #ccc;
-  border-radius: 2px;
   box-sizing: border-box;
   color: #2C3E50;
   font-size: 13px;
   position: absolute;
   background-color: white;
+  border-radius: 0.2rem;
   //&:focus {
   //  border: solid 0.8px #f0bd50;;
   //  outline: none;
   //}
   li {
+    padding: 4px;
     cursor: pointer;
+    font-size: 13px;
+  }
+}
+.animation {
+  //animation: pulse 500ms;
+  //animation: pulse 1s;
+  //transition: height 5s;
+  //background: #fff;
+  //overflow: hidden;
+  //color: #000;
+  //line-height: 50px;
+  //
+  //transition: all .5s ease-in-out;
+  //transform-origin: left top;
+  //transform: scaleY(0);
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

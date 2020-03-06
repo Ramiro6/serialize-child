@@ -30,7 +30,7 @@ export class SearchBoxComponent implements OnInit {
 
 
   toReturnValue(event: string): void {
-    console.log(event)
+    console.log(event);
     this.returnValue.emit(event);
   }
 
