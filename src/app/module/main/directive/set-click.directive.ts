@@ -10,18 +10,14 @@ export class SetClickDirective {
   constructor( private element: ElementRef ) {}
 
   @HostListener('document:click', ['$event'])
-  onClick({ path }) {
-    if (this.takeBox?.nativeElement) {
-      const getElement: HTMLUListElement = this.element.nativeElement;
-      if (path.includes(getElement) || path.includes(this.takeBox.nativeElement) ) {
-        return;
-      } else {
-        this.sendData(false);
-      }
+  onClick({ target }) {
+    const elRef: HTMLElement = this.element.nativeElement;
+    if (!elRef.contains(target) && !elRef?.parentElement?.contains(target)) {
+      this.closePop(false);
     }
   }
 
-  private sendData(event: boolean): void {
+  private closePop(event: boolean): void {
     this.matchClick.emit(event);
   }
 

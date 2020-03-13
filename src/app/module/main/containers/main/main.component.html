@@ -17,10 +17,17 @@
   </aside>
 
 
-  <h1 text-center class="main-content">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa cumque dignissimos eos est, expedita explicabo in
-    ipsum molestias nulla veniam. Amet assumenda consequuntur et minima quaerat quia sed temporibus vero.
-  </h1>
+  <div text-center class="main-content">
+    <div class="sub-main__card">
+      <div class="card-container" *ngFor="let item of (data | async)">
+        <h3>{{ item?.title }}</h3>
+        <div>
+          <span>{{ item?.description }}</span>
+        </div>
+          <button>Click me!</button>
+      </div>
+    </div>
+  </div>
 </div>
 
 

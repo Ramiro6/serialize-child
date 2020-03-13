@@ -24,14 +24,24 @@
   grid-area: header;
 }
 
+
+.sub-main__card {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  justify-items: center;
+}
+
 .container {
   display: grid;
-  grid-template-rows: 50px 1fr 1fr;
+  grid-template-rows: 50px 1fr 1fr 1fr;
   grid-template-areas:
-    "header header header"
-    "sidebar main main"
-    "sidebar main main";
-  grid-template-columns: 150px 1fr 1fr;
+    "header header header header"
+    "sidebar main main main"
+    "sidebar main main main";
+  grid-template-columns: 150px 1fr 1fr 1fr;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -42,6 +52,14 @@
 .box__search {
   display: flex;
   flex-direction: column;
+}
+
+
+.card-container {
+  width: 18rem;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
 }
 
 

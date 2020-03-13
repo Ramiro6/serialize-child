@@ -124,8 +124,4 @@ export class SearchListComponent implements AfterContentInit, OnDestroy {
       this.contentSubscription$.unsubscribe();
     }
   }
-
-  onAnimationEvent($event: any) {
-    console.log($event);
-  }
 }

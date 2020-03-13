@@ -7,6 +7,7 @@ import {FormsModule} from '@angular/forms';
 import {SearchListComponent} from './components/search-list/search-list.component';
 import {SetClickDirective} from './directive/set-click.directive';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {ContentService} from '../shared/services/content.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
   ],
   exports: [
     MainComponent,
-    SearchListComponent
+    SearchListComponent,
+    SetClickDirective
   ],
     imports: [
       CommonModule,
@@ -25,7 +27,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
       BrowserAnimationsModule
     ],
   providers: [
-    GetDataService
+    GetDataService,
+    ContentService
   ]
 })
 
